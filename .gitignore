@@ -1,0 +1,25 @@
+# Data is downloaded separately (see README)
+DATA/
+cache/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Private, not part of the submission
+PROJECT_BRIEF.md
+Flock_Energy - Data Science.pdf
+
+# Colab data exports (derived from DATA/)
+colab/data/
+
+# Explainer video project (kept locally, not part of the submission)
+video/

@@ -1,0 +1,10 @@
+# Tested with Python 3.13.7 on Windows 11
+pandas==3.1.0
+numpy==2.5.4
+pyarrow==26.0.0
+matplotlib==3.11.2
+lightgbm==4.7.0
+scikit-learn==1.9.1
+openpyxl==3.1.5
+PyYAML==6.0.3
+tzdata==2026.5

@@ -1,0 +1,55 @@
+# Central configuration. Paths are relative to the repo root.
+paths:
+  data_dir: DATA              # expected layout: DATA/raw/*.csv and DATA/clean/*.csv
+  raw_subdir: raw
+  clean_subdir: clean
+  cache_dir: cache            # rebuilt automatically from DATA/ if missing
+  figures_dir: figures
+  outputs_dir: outputs
+
+# Local time zone for anything calendar-based (hour of day, day of week)
+local_tz: Europe/London
+
+# Washing-machine channel(s) per house (from CLEAN_READ_ME_081116.txt; verified in the data).
+# The target is the SUM of the listed channels. House 12 has no washing machine.
+# House 4 has two machines; target = Appliance4 + Appliance5 (our decision, see DATA.md).
+wm_channel:
+  1: [Appliance5]
+  2: [Appliance2]
+  3: [Appliance6]
+  4: [Appliance4, Appliance5]
+  5: [Appliance3]
+  6: [Appliance2]
+  7: [Appliance5]
+  8: [Appliance4]
+  9: [Appliance3]
+  10: [Appliance5]
+  11: [Appliance3]
+  13: [Appliance3]
+  15: [Appliance3]
+  16: [Appliance5]
+  17: [Appliance4]
+  18: [Appliance5]
+  19: [Appliance2]
+  20: [Appliance4]
+  21: [Appliance3]
+
+# Separate washer-dryer channels (never the target; just another load in the aggregate)
+washer_dryer_channel:
+  1: Appliance4
+  8: Appliance3
+  9: Appliance2
+  18: Appliance4
+
+# Per-house period restrictions (our decisions, based on the readme)
+period_end:
+  13: "2015-03-25"   # washing machine replaced on 25 Mar 2015; use data before this date only
+
+houses_all: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21]
+
+# LOCKED on 2026-10-28 before any model code: seeded random draw (seed 42) of 3 houses
+# from the 19 eligible houses (src/split.py; outputs/test_lock.json). Scored ONCE at the end.
+test_houses: [2, 15, 16]
+dev_houses: [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 18, 19, 20, 21]
+
+seed: 42
