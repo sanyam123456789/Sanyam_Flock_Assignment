@@ -4,6 +4,9 @@ Take-home assignment for Flock Energy (Data Science). A reproducible Python pipe
 cleans raw REFIT smart-meter data, analyses washing-machine use in 19 UK homes, and estimates
 washing-machine power from the whole-home signal at 1-minute resolution.
 
+> **▶ Demo video (90 s):** [Watch the walkthrough on Google Drive](https://drive.google.com/file/d/1jAr4E1pZS26sFRZh9oU5Mi8qscXtCJ-t/view)
+> covering the problem, data cleaning, washing-machine usage, the model, validation, results and limitations.
+
 | Document | What is in it |
 |---|---|
 | [DATA.md](DATA.md) | Section 1 (raw House 1 inspection and cleaning) and all data-quality decisions |
