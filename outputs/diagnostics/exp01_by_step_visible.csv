@@ -1,0 +1,3 @@
+step_visible,blocks,actual_kwh,captured_pct,gating_loss_pct,regressor_err_pct,gate_open_share
+False,865,377.0,26.1,19.6,54.2,0.451
+True,4682,1870.5,48.0,26.0,25.9,0.564

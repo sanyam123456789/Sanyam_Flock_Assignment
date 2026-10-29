@@ -1,0 +1,97 @@
+{
+  "median_house": 16,
+  "actual_vs_predicted_day": "2014-12-30",
+  "failure_over": {
+    "house": 16,
+    "day": "2015-03-29",
+    "actual_kwh": 0.62,
+    "estimated_kwh": 1.91
+  },
+  "failure_under": {
+    "house": 16,
+    "day": "2015-02-11",
+    "actual_kwh": 2.53,
+    "estimated_kwh": 0.39
+  },
+  "failure_stats": {
+    "2": {
+      "total_actual_kwh": 196.1,
+      "total_estimated_kwh": 76.3,
+      "false_on_minutes": 3213,
+      "false_on_with_other_load_ge1kW_pct": 21.3,
+      "false_on_by_appliance_pct": {
+        "Dishwasher": 18.0,
+        "Kettle": 3.5
+      },
+      "cycles_by_heater": {
+        "no heater": {
+          "cycles": 20,
+          "found_pct": 30.0,
+          "act_kwh": 1.0,
+          "est_kwh": 0.22,
+          "energy_captured_pct": 21.6
+        },
+        "heater": {
+          "cycles": 313,
+          "found_pct": 90.7,
+          "act_kwh": 194.36,
+          "est_kwh": 43.68,
+          "energy_captured_pct": 22.5
+        }
+      }
+    },
+    "15": {
+      "total_actual_kwh": 199.3,
+      "total_estimated_kwh": 105.1,
+      "false_on_minutes": 834,
+      "false_on_with_other_load_ge1kW_pct": 40.5,
+      "false_on_by_appliance_pct": {
+        "Tumble dryer": 38.2,
+        "Dishwasher": 1.9,
+        "Hi-fi": 1.1
+      },
+      "cycles_by_heater": {
+        "no heater": {
+          "cycles": 30,
+          "found_pct": 13.3,
+          "act_kwh": 1.97,
+          "est_kwh": 0.26,
+          "energy_captured_pct": 13.0
+        },
+        "heater": {
+          "cycles": 240,
+          "found_pct": 91.7,
+          "act_kwh": 195.01,
+          "est_kwh": 100.18,
+          "energy_captured_pct": 51.4
+        }
+      }
+    },
+    "16": {
+      "total_actual_kwh": 206.7,
+      "total_estimated_kwh": 143.4,
+      "false_on_minutes": 6791,
+      "false_on_with_other_load_ge1kW_pct": 16.6,
+      "false_on_by_appliance_pct": {
+        "Dishwasher": 14.7,
+        "Electric heater (2)": 1.8
+      },
+      "cycles_by_heater": {
+        "no heater": {
+          "cycles": 11,
+          "found_pct": 63.6,
+          "act_kwh": 0.62,
+          "est_kwh": 0.27,
+          "energy_captured_pct": 44.1
+        },
+        "heater": {
+          "cycles": 308,
+          "found_pct": 90.9,
+          "act_kwh": 205.26,
+          "est_kwh": 75.02,
+          "energy_captured_pct": 36.6
+        }
+      }
+    }
+  }
+}

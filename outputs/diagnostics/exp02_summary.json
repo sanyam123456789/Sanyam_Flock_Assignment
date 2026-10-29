@@ -1,0 +1,29 @@
+{
+  "auc": {
+    "minute_p": 0.811,
+    "all_blocks_mean_p": 0.825,
+    "all_blocks_max_p": 0.824,
+    "blocks_ge6min_mean_p": 0.834,
+    "blocks_ge6min_max_p": 0.821,
+    "vs_dishwasher_block_mean_p": 0.823,
+    "vs_tumble_dryer_block_mean_p": 0.737,
+    "vs_kettle_block_mean_p": 0.894
+  },
+  "regressor_all_on_minutes": {
+    "mean_actual_w": 458.5,
+    "mean_regressor_w": 438.7
+  },
+  "wm_heating": {
+    "blocks": 5547,
+    "mean_p": 0.462,
+    "gate_open_share": 0.547,
+    "captured_kwh": 997.2,
+    "actual_kwh": 2247.5
+  },
+  "lookalike": {
+    "blocks": 18121,
+    "mean_p": 0.156,
+    "gate_open_share": 0.126,
+    "false_kwh": 459.2
+  }
+}

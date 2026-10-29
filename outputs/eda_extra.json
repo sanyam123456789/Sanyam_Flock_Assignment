@@ -1,0 +1,31 @@
+{
+  "house4": {
+    "on_minutes_A4": 2485,
+    "on_minutes_A5": 9125,
+    "both_on": 214,
+    "both_on_pct_of_any_on": 1.88,
+    "cycles_A4": 60,
+    "cycles_A5": 213,
+    "cycles_summed_target": 262
+  },
+  "representative_day": [
+    1,
+    "2014-03-31"
+  ],
+  "weekday_share_vs_exposure_median": {
+    "0": 1.086,
+    "1": 0.905,
+    "2": 0.957,
+    "3": 0.834,
+    "4": 0.912,
+    "5": 1.007,
+    "6": 0.933
+  },
+  "params": {
+    "theta_w": 20,
+    "g_min": 10,
+    "l_min": 10,
+    "heater_w": 1500,
+    "max_cycle_min": 360
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "v1_macro_nde_day": 0.6581,
+  "primary": "fill_p0.3",
+  "verdict_primary": "does not help",
+  "variants": {
+    "fill_p0.2": {
+      "macro_nde_day": 1.108,
+      "houses_better": 2,
+      "houses_worse": 14,
+      "accepted_blocks": 15078,
+      "accepted_blocks_wm_heating_share": 0.208,
+      "err_reduced_kwh": 412.9,
+      "err_added_kwh": 2067.9,
+      "added_kwh_wm_on": 1034.3,
+      "added_kwh_wm_off": 1598.9
+    },
+    "fill_p0.3": {
+      "macro_nde_day": 0.8815,
+      "houses_better": 3,
+      "houses_worse": 13,
+      "accepted_blocks": 10070,
+      "accepted_blocks_wm_heating_share": 0.267,
+      "err_reduced_kwh": 271.8,
+      "err_added_kwh": 1149.7,
+      "added_kwh_wm_on": 721.3,
+      "added_kwh_wm_off": 803.5
+    },
+    "fill_p0.4": {
+      "macro_nde_day": 0.7725,
+      "houses_better": 3,
+      "houses_worse": 13,
+      "accepted_blocks": 6795,
+      "accepted_blocks_wm_heating_share": 0.331,
+      "err_reduced_kwh": 165.2,
+      "err_added_kwh": 622.3,
+      "added_kwh_wm_on": 471.1,
+      "added_kwh_wm_off": 381.0
+    },
+    "fill_p0.5": {
+      "macro_nde_day": 0.7156,
+      "houses_better": 3,
+      "houses_worse": 13,
+      "accepted_blocks": 4499,
+      "accepted_blocks_wm_heating_share": 0.405,
+      "err_reduced_kwh": 95.7,
+      "err_added_kwh": 340.9,
+      "added_kwh_wm_on": 300.5,
+      "added_kwh_wm_off": 177.7
+    }
+  },
+  "heating_block_capture": {
+    "heating_kwh": "2247.5",
+    "v1_captured_pct": "44.4",
+    "fill_p0.2_captured_pct": "66.6",
+    "fill_p0.3_captured_pct": "59.6",
+    "fill_p0.4_captured_pct": "54.2",
+    "fill_p0.5_captured_pct": "50.6"
+  },
+  "paired_blocks_all_by_label": {
+    "WM off: Unmonitored load": 25151,
+    "WM off: Kettle": 14534,
+    "WM off: Dishwasher": 7545,
+    "WM on, not heating": 5673,
+    "WM off: Microwave": 4252,
+    "WM heating": 4040,
+    "WM off: Tumble dryer": 3567,
+    "WM off: Electric heater": 1028,
+    "WM off: Other": 528,
+    "WM off: Toaster": 412,
+    "WM off: Washer dryer": 355
+  }
+}

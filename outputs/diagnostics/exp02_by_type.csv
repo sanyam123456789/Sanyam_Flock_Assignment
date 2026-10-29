@@ -1,0 +1,10 @@
+type,blocks,houses,median_minutes,mean_p,gate_open_share,mean_regressor_w,predicted_kwh
+Dishwasher,8324,12,11.0,0.158,0.131,1338.0,287.0
+WM heating,5547,16,11.0,0.462,0.547,1470.0,997.2
+Kettle,4754,13,3.0,0.094,0.06,1120.0,22.1
+Tumble dryer,3035,6,9.0,0.236,0.217,696.0,120.0
+Other,732,12,4.0,0.158,0.087,558.0,5.6
+Microwave,573,6,5.0,0.157,0.105,876.0,8.2
+Washer dryer,323,4,6.0,0.215,0.177,658.0,8.4
+Toaster,203,4,3.0,0.183,0.169,1188.0,2.5
+Electric heater,177,2,4.0,0.196,0.14,690.0,5.4

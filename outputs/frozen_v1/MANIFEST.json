@@ -1,0 +1,65 @@
+{
+  "frozen_from_commit": "a70dc3c",
+  "config": {
+    "model": "two-stage LightGBM (classifier + ON-minute regressor)",
+    "calendar_features": true,
+    "rounds": 800,
+    "gate": "hard, P(ON) > 0.4",
+    "selection_file": "outputs/metrics/selection.json"
+  },
+  "headline_test_result": {
+    "macro_nde_day": 0.6693,
+    "ci95": [
+      0.643,
+      0.7
+    ],
+    "per_house": {
+      "2": 0.835,
+      "15": 0.495,
+      "16": 0.678
+    }
+  },
+  "note": "v1 = the confirmatory result. Anything after this point is post-hoc and reported separately.",
+  "cache_checksums": {
+    "cache/oof/always_off.parquet": {
+      "sha256": "2c36d658d1821cb7a8876caac5c4dd4a5b9a2f1eed95f94b8618baa8313cff86",
+      "bytes": 66635629
+    },
+    "cache/oof/hour_of_week.parquet": {
+      "sha256": "10ca3a4697ca45d3bc674ec3dd193dc573b92af95429e1fe80e6a907203352d0",
+      "bytes": 66944217
+    },
+    "cache/oof/lgb_l2.parquet": {
+      "sha256": "34dd4d200d5329f60080b0cb6128518843837b25b794c249dacb4d0172e09c2f",
+      "bytes": 163856210
+    },
+    "cache/oof/lgb_tweedie.parquet": {
+      "sha256": "a754a4b7c1be38a0f8999afdcbe2aae737dd5f939664d3d694bcb4ff77ff7098",
+      "bytes": 252713356
+    },
+    "cache/oof/lgb_twostage.parquet": {
+      "sha256": "acd7ef85003e130c705caecaef702303e16a8e63f125908df043e1343acf249a",
+      "bytes": 415648302
+    },
+    "cache/oof/lgb_twostage_cal.parquet": {
+      "sha256": "f2d70822d1f70b90ea9074d991b665cab0011bb0876879a89562e7378821d1db",
+      "bytes": 425157389
+    },
+    "cache/oof/seq2point.parquet": {
+      "sha256": "8be8faaf2dfb762aefabb5b57c70daeef4403beb8aa2485fc6fd484a9e7f8b29",
+      "bytes": 76528657
+    },
+    "cache/oof/TEST_final.parquet": {
+      "sha256": "54cf5b614c3e80d0e81587eee78d36161c5e3bb0e9b57164b263344f36dbbe94",
+      "bytes": 30669860
+    },
+    "cache/models/final_classifier.txt": {
+      "sha256": "8b73ab6e916fdf8d7747429bcfc802f3aae73e1e2c7eafe8a9224e18f6b12bd8",
+      "bytes": 5615074
+    },
+    "cache/models/final_regressor.txt": {
+      "sha256": "629942c6e271292095194b6e7c4c1d91b32a04b5a0a4dc87cc1ac79766d6df4f",
+      "bytes": 4583965
+    }
+  }
+}

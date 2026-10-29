@@ -1,0 +1,25 @@
+{
+  "Aggregate": {
+    "minutes_compared": 801931,
+    "corr": 0.9989,
+    "median_abs_diff_W": 0.0,
+    "mean_ours_W": 478.0,
+    "mean_official_W": 478.1
+  },
+  "Appliance5": {
+    "minutes_compared": 793593,
+    "corr": 0.9987,
+    "median_abs_diff_W": 0.0,
+    "mean_ours_W": 10.8,
+    "mean_official_W": 10.8
+  },
+  "Appliance1": {
+    "minutes_compared": 799463,
+    "corr": 0.9974,
+    "median_abs_diff_W": 0.0,
+    "mean_ours_W": 17.7,
+    "mean_official_W": 17.7
+  },
+  "minutes_valid_ours_only": 2843,
+  "minutes_valid_official_only": 295
+}

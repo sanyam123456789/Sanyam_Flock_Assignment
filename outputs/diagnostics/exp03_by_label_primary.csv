@@ -1,0 +1,12 @@
+label,blocks,added_kwh,err_reduced_kwh,err_added_kwh
+"WM on, not heating",2689,403.4,28.0,329.6
+WM heating,2684,340.2,241.5,43.8
+WM off: Unmonitored load,1446,201.6,0.9,200.1
+WM off: Dishwasher,1187,276.8,0.3,276.1
+WM off: Tumble dryer,1006,164.1,0.6,162.6
+WM off: Kettle,543,63.1,0.2,62.6
+WM off: Microwave,211,31.7,0.2,31.4
+WM off: Washer dryer,102,17.0,0.1,16.9
+WM off: Electric heater,74,10.6,0.0,10.6
+WM off: Toaster,72,6.3,0.0,6.3
+WM off: Other,56,10.0,0.0,9.8

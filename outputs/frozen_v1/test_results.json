@@ -1,0 +1,96 @@
+{
+  "selected": {
+    "calendar": true,
+    "rounds": 800,
+    "t": 0.4,
+    "variant": "lgb_twostage_cal:hard_r800_t0.4"
+  },
+  "test_houses": [
+    2,
+    15,
+    16
+  ],
+  "macro": {
+    "always_off": {
+      "nde_day": 1.0,
+      "daily_mae_kwh": 0.4342,
+      "mae_w": 18.4739,
+      "mae_active_w": 498.5502,
+      "sae": 1.0,
+      "rmse_w": 176.4338,
+      "precision": NaN,
+      "recall": 0.0,
+      "f1": 0.0,
+      "event_recall": 0.0,
+      "event_precision": NaN
+    },
+    "hour_of_week": {
+      "nde_day": 1.0524,
+      "daily_mae_kwh": 0.4538,
+      "mae_w": 34.2736,
+      "mae_active_w": 476.1294,
+      "sae": 0.0492,
+      "rmse_w": 175.3936,
+      "precision": 0.0571,
+      "recall": 0.5108,
+      "f1": 0.1025,
+      "event_recall": 0.6406,
+      "event_precision": 0.1864
+    },
+    "model": {
+      "nde_day": 0.6693,
+      "daily_mae_kwh": 0.2915,
+      "mae_w": 17.0894,
+      "mae_active_w": 356.7942,
+      "sae": 0.4633,
+      "rmse_w": 155.1698,
+      "precision": 0.6957,
+      "recall": 0.3385,
+      "f1": 0.4469,
+      "event_recall": 0.7196,
+      "event_precision": 0.6905
+    }
+  },
+  "bootstrap": {
+    "model": {
+      "per_house_nde_ci": {
+        "2": [
+          0.785,
+          0.897
+        ],
+        "15": [
+          0.454,
+          0.536
+        ],
+        "16": [
+          0.626,
+          0.738
+        ]
+      },
+      "macro_nde_ci": [
+        0.643,
+        0.7
+      ]
+    },
+    "hour_of_week": {
+      "per_house_nde_ci": {
+        "2": [
+          0.883,
+          1.063
+        ],
+        "15": [
+          1.163,
+          1.414
+        ],
+        "16": [
+          0.848,
+          1.005
+        ]
+      },
+      "macro_nde_ci": [
+        1.002,
+        1.117
+      ]
+    }
+  }
+}
