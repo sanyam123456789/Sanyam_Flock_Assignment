@@ -26,7 +26,7 @@ from concurrent.futures import ProcessPoolExecutor
 import numpy as np
 import pandas as pd
 
-from src.config import CACHE_DIR, HOUSES_ALL, LOCAL_TZ, OUT_DIR, clean_file, raw_files
+from src.config import HOUSES_ALL, LABEL_DIR, LOCAL_TZ, OUT_DIR, WORKERS, clean_file, raw_files
 
 USE = ["Unix", "Aggregate"]
 CLOCK_CHANGES_AUTUMN = ["2013-10-27", "2014-10-26"]
@@ -39,9 +39,15 @@ def _bst_days(days: pd.Index) -> np.ndarray:
     return np.asarray(local.tz_localize(None) != noon.tz_localize(None))  # BST: local clock != UTC clock
 
 
-def daily_labels(house: int) -> pd.DataFrame:
-    path = CACHE_DIR / f"house{house}_timebase_days.csv"
-    if path.exists():
+def label_path(house: int):
+    return LABEL_DIR / f"house{house}_timebase_days.csv"
+
+
+def daily_labels(house: int, recompute: bool = False) -> pd.DataFrame:
+    """Per-day match shares and label. The labels are committed in labels/, so Sections 2-3
+    need only the cleaned files; recompute=True re-derives them from the raw files."""
+    path = label_path(house)
+    if path.exists() and not recompute:
         return pd.read_csv(path, index_col=0)
     cl = pd.read_csv(clean_file(house), engine="pyarrow", usecols=USE)
     # Only "distinctive" rows: the aggregate differs from both neighbouring readings.
@@ -169,7 +175,7 @@ def routine_shift_table() -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    with ProcessPoolExecutor(max_workers=4) as ex:
+    with ProcessPoolExecutor(max_workers=WORKERS) as ex:
         list(ex.map(daily_labels, HOUSES_ALL))
     s = pd.DataFrame([summary(h) for h in HOUSES_ALL]).set_index("house")
     s.to_csv(OUT_DIR / "clean_timebase_summary.csv")

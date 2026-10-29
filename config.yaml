@@ -4,6 +4,7 @@ paths:
   raw_subdir: raw
   clean_subdir: clean
   cache_dir: cache            # rebuilt automatically from DATA/ if missing
+  labels_dir: labels          # per-day time-base labels (committed; rebuilt from raw with --relabel)
   figures_dir: figures
   outputs_dir: outputs
 

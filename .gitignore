@@ -1,6 +1,6 @@
 # Data is downloaded separately (see README)
-DATA/
-cache/
+/DATA/
+/cache/
 
 # Python
 .venv/
@@ -23,3 +23,6 @@ colab/data/
 
 # Explainer video project (kept locally, not part of the submission)
 video/
+
+# Smoke-test outputs (rebuilt by smoke_test.py)
+smoke/out/

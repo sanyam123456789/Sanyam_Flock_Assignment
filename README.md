@@ -28,6 +28,19 @@ washing-machine power from the whole-home signal at 1-minute resolution.
 [Improvements](#possible-improvements) ·
 [Repository layout](#repository-layout)
 
+
+> **Quick reproduce**
+> 1. **Download:** `python get_data.py` (both archives) or `python get_data.py --clean`
+>    (cleaned files only). Sections 2–3 need only the 20 cleaned files; Section 1 also needs
+>    `RAW_House1_Part1.csv` and `RAW_House1_Part2.csv`.
+> 2. **Run:** `python run_all.py --sections 1 2` (cleaning and EDA, all tables and figures of Sections 1–2).
+> 3. **Time:** about 5 min on a 12-thread, 32 GB laptop (measured 30 Oct 2026, empty cache). Section 3 (`python run_all.py`) retrains
+>    every model with leave-one-house-out, about 2.5 h, unless `cache/oof/` from an earlier run exists.
+>
+> **No download at all:** `python smoke_test.py` runs the whole Section 2–3 flow (cleaning, time-base
+> correction, features, leave-one-house-out LightGBM, metrics) on a committed 4-week sample of two
+> development houses in under a minute, and checks the numbers against `smoke/expected.json`.
+
 ## The problem
 
 Utilities usually only see a home's total electricity use. Knowing when large appliances run
@@ -107,8 +120,8 @@ Full tables, plots and failure analysis: [RESULTS.md](RESULTS.md).
 
 ## Setup
 
-Tested with Python 3.13.7 on Windows 11 (12-thread laptop). Houses are processed one at a time
-to keep memory use down.
+Tested with Python 3.13.7 on Windows 11 (12-thread laptop, 32 GB RAM). The data steps process
+2 houses at a time; set `REFIT_WORKERS=1` if a run fails with a MemoryError.
 
 ```bash
 python -m venv .venv
@@ -121,8 +134,8 @@ with 7-Zip so the CSV files sit directly in these folders:
 
 | Archive | Extract to | Files used |
 |---|---|---|
-| [REFIT_RAW_081116.7z](https://pureportal.strath.ac.uk/files/62090177/REFIT_RAW_081116.7z) | `DATA/raw/` | all `RAW_House*_Part1/2.csv` files: House 1 for Section 1, and all houses for the time-base correction of the cleaned data (DATA.md §4.2) |
-| [CLEAN_REFIT_081116.7z](https://pureportal.strath.ac.uk/files/62090184/CLEAN_REFIT_081116.7z) | `DATA/clean/` | `CLEAN_House{N}.csv` for all 20 houses |
+| [REFIT_RAW_081116.7z](https://pureportal.strath.ac.uk/files/62090177/REFIT_RAW_081116.7z) | `DATA/raw/` | `RAW_House1_Part1.csv`, `RAW_House1_Part2.csv` for Section 1. The other raw files are only needed to re-derive the time-base labels (`python run_all.py --relabel`, DATA.md §4.2); the labels themselves are committed in `labels/` |
+| [CLEAN_REFIT_081116.7z](https://pureportal.strath.ac.uk/files/62090184/CLEAN_REFIT_081116.7z) | `DATA/clean/` | `CLEAN_House{N}.csv`, N = 1–13, 15–21 (20 houses; there is no House 14) |
 
 The readme files (`CLEAN_READ_ME_081116.txt`, `RAW_READ_ME_081116.txt`) are on the
 [dataset page](https://pureportal.strath.ac.uk/en/datasets/refit-electrical-load-measurements/).
@@ -280,7 +293,10 @@ In rough order of expected value:
 ## Repository layout
 
 ```
-run_all.py            end-to-end pipeline (Sections 1-3)
+run_all.py            end-to-end pipeline (Sections 1-3); checks the data files first
+get_data.py           downloads and extracts the REFIT archives into DATA/
+smoke_test.py         smoke test on the small sample in smoke/ (no download)
+labels/               per-day time-base labels of the cleaned files (derived from raw, committed)
 config.yaml           paths, channel map, test houses, seed
 requirements.txt      pinned package versions
 src/                  all pipeline code (one module per step, see table above)

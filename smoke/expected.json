@@ -1,0 +1,32 @@
+{
+  "always_off/house5": {
+    "nde_day": 1.0,
+    "mae_w": 17.1885,
+    "f1": 0.0
+  },
+  "always_off/house7": {
+    "nde_day": 1.0,
+    "mae_w": 29.3264,
+    "f1": 0.0
+  },
+  "hour_of_week/house5": {
+    "nde_day": 1.2481,
+    "mae_w": 43.4106,
+    "f1": 0.1339
+  },
+  "hour_of_week/house7": {
+    "nde_day": 0.7768,
+    "mae_w": 42.8625,
+    "f1": 0.2196
+  },
+  "lgb_twostage_soft/house5": {
+    "nde_day": 1.3607,
+    "mae_w": 45.938,
+    "f1": 0.2458
+  },
+  "lgb_twostage_soft/house7": {
+    "nde_day": 0.5917,
+    "mae_w": 34.9051,
+    "f1": 0.4356
+  }
+}

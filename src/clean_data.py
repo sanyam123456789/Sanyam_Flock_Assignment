@@ -23,7 +23,7 @@ from concurrent.futures import ProcessPoolExecutor
 import numpy as np
 import pandas as pd
 
-from src.config import APPLIANCE_COLS, CACHE_DIR, HOUSES_ALL, LOCAL_TZ, clean_file
+from src.config import APPLIANCE_COLS, CACHE_DIR, HOUSES_ALL, LOCAL_TZ, WORKERS, clean_file
 from src.timebase import _bst_days, daily_labels, resolve_labels
 
 POWER_COLS = ["Aggregate"] + APPLIANCE_COLS
@@ -159,7 +159,7 @@ def load_house(house: int) -> pd.DataFrame:
     return pd.read_parquet(cache_path(house))
 
 
-def build_all(houses=None, workers: int = 4, force: bool = False) -> pd.DataFrame:
+def build_all(houses=None, workers: int = WORKERS, force: bool = False) -> pd.DataFrame:
     houses = houses or HOUSES_ALL
     with ProcessPoolExecutor(max_workers=workers) as ex:
         stats = list(ex.map(build_house, houses, [force] * len(houses)))

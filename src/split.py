@@ -18,7 +18,7 @@ from concurrent.futures import ProcessPoolExecutor
 import numpy as np
 import pandas as pd
 
-from src.config import CFG, OUT_DIR, SEED, WM_CHANNELS
+from src.config import CFG, OUT_DIR, SEED, WM_CHANNELS, WORKERS
 from src.quality import daily_validity, house_frame
 
 MIN_VALID_DAYS = 90
@@ -43,7 +43,7 @@ def _house_row(h: int) -> dict:
 
 
 def eligibility() -> pd.DataFrame:
-    with ProcessPoolExecutor(max_workers=4) as ex:
+    with ProcessPoolExecutor(max_workers=WORKERS) as ex:
         rows = list(ex.map(_house_row, sorted(WM_CHANNELS)))
     t = pd.DataFrame(rows).set_index("house")
     t["eligible"] = (t.valid_days >= MIN_VALID_DAYS) & (t.provisional_cycles >= MIN_CYCLES)
